@@ -1,0 +1,403 @@
+/* ================== ESTILOS GERAIS ================== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #0f4c5c;
+    color: white;
+}
+
+/* ================== CABEÇALHO ================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0f4c5c;
+    padding: 15px;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav-menu ul li {
+    margin: 0 10px;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+}
+
+/* ================== BANNER ================== */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.banner-slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.banner-img.active {
+    opacity: 1;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    background: rgba(0, 0, 0, 0.197);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 2;
+    user-select: none;
+}
+
+.banner-text h1 {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    font-weight: bold;
+}
+
+/* ================== CATEGORIAS ================== */
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    text-align: center;
+    background: #127a8c;
+}
+
+.category-item {
+    background: #0f5c6c;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.category-item:hover {
+    background: #0c4a5c;
+}
+
+/* ================== EVENTOS ================== */
+.events {
+    text-align: center;
+    padding: 20px;
+    background: #0c3a4a;
+}
+
+/* ================== RODAPÉ ================== */
+footer {
+    background: #093c48;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-logos img {
+    height: 40px;
+    margin: 5px;
+}
+
+/* ================== BARRA DE PESQUISA ================== */
+.search-bar {
+    display: flex;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    border: none;
+    border-radius: 20px 0 0 20px;
+    width: 200px;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 8px 12px;
+    border: none;
+    background-color: white;
+    color: white;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #0f5c6c;
+}
+
+/* ================== CARROSSEL ================== */
+/* Carrossel interativo */
+.carousel {
+    width: 100%;
+    max-width: 1200px; /* Aumentando a largura máxima do carrossel */
+    margin: 50px auto; /* Centraliza o carrossel */
+    text-align: center;
+}
+
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    gap: 30px; /* Espaço entre as imagens */
+    justify-content: center;
+}
+
+.carousel-item {
+    width: 400px; /* Tamanho aumentado das imagens */
+    height: 300px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra para destacar as imagens */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.carousel-item:hover img {
+    transform: scale(1.1); /* Aumenta a imagem */
+    filter: brightness(1.2); /* Aumenta o brilho */
+}.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.carousel-nav:hover {
+    background-color: rgba(0, 0, 0, 0.081);
+}
+/* Estilo para as legendas (textos) sobre as imagens do carrossel */
+.carousel-item {
+    width: 400px;
+    height: 300px;
+    position: relative; /* Necessário para posicionar o texto sobre a imagem */
+    transition: transform 0.3s ease, filter 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Estilo da legenda sobre a imagem */
+.carousel-caption {
+    position: absolute;
+    bottom: 20px; /* Distância do fundo */
+    left: 20px; /* Distância da esquerda */
+    right: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Fundo semitransparente para melhor leitura */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para o texto */
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.3s ease-in-out; /* Efeito de fade-in */
+}
+
+.carousel-item:hover .carousel-caption {
+    opacity: 1; /* Texto aparece ao passar o mouse sobre a imagem */
+}
+
+/* Efeito de hover para as imagens do carrossel */
+.carousel-item:hover img {
+    transform: scale(1.1); /* Aumenta a imagem */
+    filter: brightness(1.2); /* Aumenta o brilho */
+}
+
+
+/* ================== RODAPÉ ================== */
+.footer {
+    background-color: #0f2a3c;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    width: 100px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    display: inline-block;
+    margin: 10px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #0f5c6c;
+}
+
+.footer-social a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #0f5c6c;
+}
+
+.footer-bottom {
+    background-color: #0c3a4a;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* ================== RESPONSIVIDADE ================== */
+@media (max-width: 768px) {
+    .banner-text {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .banner-text h1 {
+        font-size: 1.2rem;
+    }
+
+    .carousel-item img {
+        height: 250px;
+    }
+}
+
+@media (max-width: 600px) {
+    .search-bar {
+        margin-top: 8px;
+    }
+    
+    .search-bar input[type="text"] {
+        width: 150px;
+    }
+}
+@media (max-width: 768px) {
+    .search-bar input {
+        width: 80%; /* Mais estreito em telas menores */
+    }
+    .carousel-container {
+        flex-direction: column; /* Carrossel vertical em telas menores */
+    }
+    .carousel-item {
+        width: 90%; /* Carrossel com largura maior em telas menores */
+        margin-bottom: 20px;
+    }
+}
+/* Ajustando o carrossel em telas menores */
+@media (max-width: 768px) {
+    .carousel-container {
+        flex-direction: column;
+        gap: 15px; /* Menos espaçamento entre as imagens */
+    }
+    .carousel-item {
+        width: 100%;
+        margin-bottom: 15px; /* Espaçamento entre as imagens */
+    }
+}/* ================== RESPONSIVIDADE ================== */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-logo {
+        margin-bottom: 20px;
+    }
+
+    .footer-links ul {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .footer-links ul li {
+        margin: 5px 0;
+    }
+}
+.footer-logo img {
+    width: 40px; /* Tamanho reduzido da logo */
+}
+
